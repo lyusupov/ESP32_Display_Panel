@@ -1,5 +1,11 @@
 # ChangeLog
 
+## v1.0.5 - 2025-10-14
+
+### Enhancements:
+
+* feat(board): add support for Wireless-Tag WTP4C5MP07S @lyusupov (#244)
+
 ## v1.0.4 - 2025-09-19
 
 ### Enhancements:
