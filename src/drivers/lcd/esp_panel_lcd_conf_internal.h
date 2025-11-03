@@ -35,6 +35,7 @@
         #define ESP_PANEL_DRIVERS_LCD_USE_JD9165 (1)
         #define ESP_PANEL_DRIVERS_LCD_USE_JD9365 (1)
         #define ESP_PANEL_DRIVERS_LCD_USE_NV3022B (1)
+        #define ESP_PANEL_DRIVERS_LCD_USE_RM69A10 (1)
         #define ESP_PANEL_DRIVERS_LCD_USE_SH8601 (1)
         #define ESP_PANEL_DRIVERS_LCD_USE_SPD2010 (1)
         #define ESP_PANEL_DRIVERS_LCD_USE_ST7262 (1)
@@ -139,6 +140,14 @@
                 #define ESP_PANEL_DRIVERS_LCD_USE_NV3022B CONFIG_ESP_PANEL_DRIVERS_LCD_USE_NV3022B
             #else
                 #define ESP_PANEL_DRIVERS_LCD_USE_NV3022B (0)
+            #endif
+        #endif
+
+        #ifndef ESP_PANEL_DRIVERS_LCD_USE_RM69A10
+            #ifdef CONFIG_ESP_PANEL_DRIVERS_LCD_USE_RM69A10
+                #define ESP_PANEL_DRIVERS_LCD_USE_RM69A10 CONFIG_ESP_PANEL_DRIVERS_LCD_USE_RM69A10
+            #else
+                #define ESP_PANEL_DRIVERS_LCD_USE_RM69A10 (0)
             #endif
         #endif
 
@@ -328,6 +337,14 @@
         #define ESP_PANEL_DRIVERS_LCD_ENABLE_NV3022B  (1)
     #else
         #define ESP_PANEL_DRIVERS_LCD_ENABLE_NV3022B  (0)
+    #endif
+#endif
+
+#ifndef ESP_PANEL_DRIVERS_LCD_ENABLE_RM69A10
+    #if ESP_PANEL_DRIVERS_LCD_COMPILE_UNUSED_DRIVERS || ESP_PANEL_DRIVERS_LCD_USE_RM69A10
+        #define ESP_PANEL_DRIVERS_LCD_ENABLE_RM69A10  (1)
+    #else
+        #define ESP_PANEL_DRIVERS_LCD_ENABLE_RM69A10  (0)
     #endif
 #endif
 
