@@ -1,8 +1,8 @@
 /*
- * @Description: rm69a10_driver
+ * @Description: hi8561_driver
  * @Author: LILYGO_L
- * @Date: 2025-07-07 14:23:16
- * @LastEditTime: 2025-10-09 10:30:10
+ * @Date: 2025-06-13 11:02:44
+ * @LastEditTime: 2025-10-09 10:37:00
  * @License: GPL 3.0
  */
 #pragma once
@@ -24,7 +24,7 @@ typedef struct
     const void *data;      /*<! Buffer that holds the command specific data */
     size_t data_bytes;     /*<! Size of `data` in memory, in bytes */
     unsigned int delay_ms; /*<! Delay in milliseconds after this command */
-} rm69a10_lcd_init_cmd_t;
+} hi8561_lcd_init_cmd_t;
 
 /**
  * @brief LCD panel vendor configuration.
@@ -34,25 +34,25 @@ typedef struct
  */
 typedef struct
 {
-    const rm69a10_lcd_init_cmd_t *init_cmds; /*!< Pointer to initialization commands array. Set to NULL if using default commands.
-                                              *   The array should be declared as `static const` and positioned outside the function.
-                                              *   Please refer to `vendor_specific_init_default` in source file.
-                                              */
-    uint16_t init_cmds_size;                 /*<! Number of commands in above array */
+    const hi8561_lcd_init_cmd_t *init_cmds; /*!< Pointer to initialization commands array. Set to NULL if using default commands.
+                                             *   The array should be declared as `static const` and positioned outside the function.
+                                             *   Please refer to `vendor_specific_init_default` in source file.
+                                             */
+    uint16_t init_cmds_size;                /*<! Number of commands in above array */
     struct
     {
         esp_lcd_dsi_bus_handle_t dsi_bus;             /*!< MIPI-DSI bus configuration */
         const esp_lcd_dpi_panel_config_t *dpi_config; /*!< MIPI-DPI panel configuration */
         uint8_t lane_num;                             /*!< Number of MIPI-DSI lanes, defaults to 2 if set to 0 */
     } mipi_config;
-} rm69a10_vendor_config_t;
+} hi8561_vendor_config_t;
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 /**
- * @brief Create LCD panel for model RM69A10
+ * @brief Create LCD panel for model HI8561
  *
  * @note  Vendor specific initialization can be different between manufacturers, should consult the LCD supplier for initialization sequence code.
  *
@@ -64,10 +64,8 @@ extern "C" {
  *      - ESP_OK                on success
  *      - Otherwise             on fail
  */
-esp_err_t esp_lcd_new_panel_rm69a10(const esp_lcd_panel_io_handle_t io, const esp_lcd_panel_dev_config_t *panel_dev_config,
-                                    esp_lcd_panel_handle_t *ret_panel);
-
-esp_err_t set_rm69a10_brightness(esp_lcd_panel_t *panel, uint8_t brightness);
+esp_err_t esp_lcd_new_panel_hi8561(const esp_lcd_panel_io_handle_t io, const esp_lcd_panel_dev_config_t *panel_dev_config,
+                                   esp_lcd_panel_handle_t *ret_panel);
 
 #ifdef __cplusplus
 }

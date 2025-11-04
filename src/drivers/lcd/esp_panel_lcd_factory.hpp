@@ -15,6 +15,7 @@
 #include "esp_panel_lcd_gc9a01.hpp"
 #include "esp_panel_lcd_gc9b71.hpp"
 #include "esp_panel_lcd_gc9503.hpp"
+#include "esp_panel_lcd_hi8561.hpp"
 #include "esp_panel_lcd_hx8399.hpp"
 #include "esp_panel_lcd_ili9881c.hpp"
 #include "esp_panel_lcd_ili9341.hpp"

@@ -29,6 +29,7 @@
         #define ESP_PANEL_DRIVERS_LCD_USE_GC9A01 (1)
         #define ESP_PANEL_DRIVERS_LCD_USE_GC9B71 (1)
         #define ESP_PANEL_DRIVERS_LCD_USE_GC9503 (1)
+        #define ESP_PANEL_DRIVERS_LCD_USE_HI8561 (1)
         #define ESP_PANEL_DRIVERS_LCD_USE_HX8399 (1)
         #define ESP_PANEL_DRIVERS_LCD_USE_ILI9341 (1)
         #define ESP_PANEL_DRIVERS_LCD_USE_ILI9881C (1)
@@ -92,6 +93,14 @@
                 #define ESP_PANEL_DRIVERS_LCD_USE_GC9503 CONFIG_ESP_PANEL_DRIVERS_LCD_USE_GC9503
             #else
                 #define ESP_PANEL_DRIVERS_LCD_USE_GC9503 (0)
+            #endif
+        #endif
+
+        #ifndef ESP_PANEL_DRIVERS_LCD_USE_HI8561
+            #ifdef CONFIG_ESP_PANEL_DRIVERS_LCD_USE_HI8561
+                #define ESP_PANEL_DRIVERS_LCD_USE_HI8561 CONFIG_ESP_PANEL_DRIVERS_LCD_USE_HI8561
+            #else
+                #define ESP_PANEL_DRIVERS_LCD_USE_HI8561 (0)
             #endif
         #endif
 
@@ -289,6 +298,14 @@
         #define ESP_PANEL_DRIVERS_LCD_ENABLE_GC9503  (1)
     #else
         #define ESP_PANEL_DRIVERS_LCD_ENABLE_GC9503  (0)
+    #endif
+#endif
+
+#ifndef ESP_PANEL_DRIVERS_LCD_ENABLE_HI8561
+    #if ESP_PANEL_DRIVERS_LCD_COMPILE_UNUSED_DRIVERS || ESP_PANEL_DRIVERS_LCD_USE_HI8561
+        #define ESP_PANEL_DRIVERS_LCD_ENABLE_HI8561  (1)
+    #else
+        #define ESP_PANEL_DRIVERS_LCD_ENABLE_HI8561  (0)
     #endif
 #endif
 

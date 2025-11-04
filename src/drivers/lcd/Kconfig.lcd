@@ -29,6 +29,10 @@ menu "LCD"
                 bool "Use GC9503"
                 default n
 
+            config ESP_PANEL_DRIVERS_LCD_USE_HI8561
+                bool "Use HI8561"
+                default n
+
             config ESP_PANEL_DRIVERS_LCD_USE_HX8399
                 bool "Use HX8399"
                 default n

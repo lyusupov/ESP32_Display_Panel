@@ -16,7 +16,7 @@
 #include "esp_lcd_mipi_dsi.h"
 #include "esp_lcd_panel_vendor.h"
 #include "esp_log.h"
-#include "rm69a10_driver.h"
+#include "esp_lcd_rm69a10.h"
 
 #define RM69A10_PAD_CONTROL (0xB2)
 #define RM69A10_DSI_2_LANE (0x10)
