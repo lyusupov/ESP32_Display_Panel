@@ -49,7 +49,7 @@ public:
      * @param[in] config Complete LCD configuration structure
      * @note Vendor initialization commands may vary between manufacturers. Consult LCD supplier for them
      */
-    LCD_RHI8561(Bus *bus, const Config &config):
+    LCD_HI8561(Bus *bus, const Config &config):
         LCD(BASIC_ATTRIBUTES_DEFAULT, bus, config)
     {
     }
